@@ -78,8 +78,8 @@ void ChessPanel::OnLeftMouseDown(wxMouseEvent& event) {
 }
 
 void ChessPanel::drawBoard(wxGraphicsContext* gc) {
-    const wxColor white = wxColor(255, 255, 255);
-    const wxColor black = wxColor(0, 0, 0, 128);
+    const wxColor white = wxColor(238, 238, 210);
+    const wxColor green = wxColor(118, 150, 86);
     const wxColor yellow = wxColor(255, 255, 128, 220);
 
     gc->SetPen(*wxTRANSPARENT_PEN);
@@ -92,7 +92,7 @@ void ChessPanel::drawBoard(wxGraphicsContext* gc) {
             if((x + y) % 2 == 0) {
                 gc->SetBrush(wxBrush(white));
             } else {
-                gc->SetBrush(wxBrush(black));
+                gc->SetBrush(wxBrush(green));
             }
 
             gc->DrawRectangle(x * cellLenX, y * cellLenY, cellLenX, cellLenY);
@@ -133,9 +133,9 @@ void ChessPanel::drawSelectionScreen(wxGraphicsContext* gc) {
     f.SetPointSize(25);
 
     gc->SetFont(f, black);
-    gc->DrawText(wxString("Select enemy:", 20), 200, 50);
+    gc->DrawText(wxString("Select Enemy:", 20), 200, 50);
     gc->DrawText(wxString("Lazy AI", 20), 250, 170);
-    gc->DrawText(wxString("Another human", 20), 200, 370);
+    gc->DrawText(wxString("Another Human", 20), 200, 370);
 }
 
 void ChessPanel::handleScreenSelection(const wxPoint& point) {
