@@ -9,70 +9,70 @@ class Piece {
     Piece(int x, int y, wxBitmap image, std::string id);
 
     virtual void illuminatePaths(Board* board) = 0;
-	virtual bool canMove(Board* board);
+    virtual bool canMove(Board* board);
 
-	int getCellX(), getCellY();
-	void setCellX(int x), setCellY(int y);
+    int getCellX(), getCellY();
+    void setCellX(int x), setCellY(int y);
+    void setId();
 
-	void setId();
-	std::string getId();
+    std::string getId();
+    wxBitmap getImage();
+    std::string getColor();
 
-	wxBitmap getImage();
-	std::string getColor();
+    void move(int targetX, int targetY, Board* board);
 
-	void move(int targetX, int targetY, Board* board);
-
-	bool isAlive();
-	void setAlive(bool isAlive);
+    bool isAlive();
+    void setAlive(bool isAlive);
 
     protected:
     int cellX, cellY;
+    std::string id;
 
-	std::string id;
-	std::string color;
     wxBitmap image;
+    std::string color;
 
-	bool alive;
-};
+    bool alive;
 
-class King : public Piece {
-    public:
-	King(int cellX, int cellY, wxBitmap image, std::string id);
-
-	void illuminatePaths(Board* board) override;
-};
-
-class Queen : public Piece {
-    public:
-	Queen(int cellX, int cellY, wxBitmap image, std::string id);
-
-	void illuminatePaths(Board* board) override;
-};
-
-class Rook : public Piece {
-    public:
-	Rook(int cellX, int cellY, wxBitmap image, std::string id);
-
-	void illuminatePaths(Board* board) override;
-};
-
-class Bishop : public Piece {
-    public:
-	Bishop(int cellX, int cellY, wxBitmap image, std::string id);
-
-	void illuminatePaths(Board* board) override;
-};
-
-class Knight : public Piece {
-    public:
-	Knight(int cellX, int cellY, wxBitmap image, std::string id);
-
-	void illuminatePaths(Board* board) override;
 };
 
 class Pawn : public Piece {
     public:
-	Pawn(int cellX, int cellYy, wxBitmap image, std::string id);
+    Pawn(int cellX, int cellYy, wxBitmap image, std::string id);
 
-	void illuminatePaths(Board* board) override;
+    void illuminatePaths(Board* board) override;
+};
+
+class Queen : public Piece {
+    public:
+    Queen(int cellX, int cellY, wxBitmap image, std::string id);
+
+    void illuminatePaths(Board* board) override;
+};
+
+class King : public Piece {
+    public:
+    King(int cellX, int cellY, wxBitmap image, std::string id);
+
+    void illuminatePaths(Board* board) override;
+};
+
+class Bishop : public Piece {
+    public:
+    Bishop(int cellX, int cellY, wxBitmap image, std::string id);
+
+    void illuminatePaths(Board* board) override;
+};
+
+class Knight : public Piece {
+    public:
+    Knight(int cellX, int cellY, wxBitmap image, std::string id);
+
+    void illuminatePaths(Board* board) override;
+};
+
+class Rook : public Piece {
+    public:
+    Rook(int cellX, int cellY, wxBitmap image, std::string id);
+
+    void illuminatePaths(Board* board) override;
 };
