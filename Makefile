@@ -47,5 +47,6 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(INCLUDE) $(WXINCLUDE) $(CXXFLAGS) $< -c -o $@
 
 chess: $(CHESSOBJECTS)
+	@if [ ! -d "$(OUTDIR)/images" ]; then cp -r $(SRCDIR)/images $(OUTDIR)/images; fi
 	`wx-config-3.1 --rescomp --static` $(SRCDIR)/chess.rc -o $(OBJDIR)/icon.o
 	$(CXX) $(CHESSOBJECTS) $(OBJDIR)/icon.o -o $(OUTDIR)/chess.exe $(WXLDFLAGS)
