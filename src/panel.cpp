@@ -99,7 +99,7 @@ void ChessPanel::drawBoard(wxGraphicsContext* gc) {
 
             if(board->getCellAt(x, y)->isIlluminated()) {
                 gc->SetBrush(wxBrush(yellow));
-                gc->DrawRectangle(x*cellLenX, y*cellLenY, cellLenX, cellLenY);
+                gc->DrawRectangle(x * cellLenX, y * cellLenY, cellLenX, cellLenY);
             }
         }
     }
@@ -113,7 +113,7 @@ void ChessPanel::drawPieces(wxGraphicsContext* gc) {
     for(auto& it : piecesMap) {
         Piece *piece = it.second;
         if(piece->isAlive()) {
-            gc->DrawBitmap(piece->getImage(), piece->getCellX() * cellLenX + 10, piece->getCellY() * cellLenY, piece->getImage().GetWidth(), piece->getImage().GetHeight());
+            gc->DrawBitmap(piece->getImage(), piece->getCellX() * cellLenX + 5, piece->getCellY() * cellLenY, piece->getImage().GetWidth(), piece->getImage().GetHeight());
         }
     }
 }

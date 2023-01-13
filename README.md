@@ -9,7 +9,6 @@ Listed in order of priority / importance.
 - Implement checkmating
 - Make the King pieces un-captureable
 - Add en passant rule for pawns
-- Proper sprites for pieces
 - Make pieces draggable
 - Add a timer mode
 - Make a better AI at some point
@@ -22,3 +21,4 @@ Listed in order of priority / importance.
 Listed in order of completion.
 - Main logic
 - Fix color scheme
+- Proper sprites for pieces

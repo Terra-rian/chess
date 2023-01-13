@@ -32,7 +32,6 @@ class Piece {
     std::string color;
 
     bool alive;
-
 };
 
 class Pawn : public Piece {
