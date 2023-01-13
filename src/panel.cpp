@@ -113,7 +113,7 @@ void ChessPanel::drawPieces(wxGraphicsContext* gc) {
     for(auto& it : piecesMap) {
         Piece *piece = it.second;
         if(piece->isAlive()) {
-            gc->DrawBitmap(piece->getImage(), piece->getCellX() * cellLenX + 5, piece->getCellY() * cellLenY, piece->getImage().GetWidth(), piece->getImage().GetHeight());
+            gc->DrawBitmap(piece->getImage(), piece->getCellX() * cellLenX + 2, piece->getCellY() * cellLenY, piece->getImage().GetWidth(), piece->getImage().GetHeight());
         }
     }
 }
