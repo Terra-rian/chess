@@ -33,4 +33,5 @@
 .vscode/
 objectfiles/
 compiled/
+test/
 *.code-workspace

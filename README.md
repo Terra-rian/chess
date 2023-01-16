@@ -22,3 +22,4 @@ Listed in order of completion.
 - Main logic
 - Fix color scheme
 - Proper sprites for pieces
+- Changed legal move display

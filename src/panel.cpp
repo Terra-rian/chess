@@ -80,7 +80,8 @@ void ChessPanel::OnLeftMouseDown(wxMouseEvent& event) {
 void ChessPanel::drawBoard(wxGraphicsContext* gc) {
     const wxColor white = wxColor(238, 238, 210);
     const wxColor green = wxColor(118, 150, 86);
-    const wxColor yellow = wxColor(255, 255, 128, 220);
+    const wxColor red = wxColor(178, 34, 34, 171);
+    const wxColor gray = wxColor(105, 105, 105, 171);
 
     gc->SetPen(*wxTRANSPARENT_PEN);
 
@@ -98,8 +99,13 @@ void ChessPanel::drawBoard(wxGraphicsContext* gc) {
             gc->DrawRectangle(x * cellLenX, y * cellLenY, cellLenX, cellLenY);
 
             if(board->getCellAt(x, y)->isIlluminated()) {
-                gc->SetBrush(wxBrush(yellow));
-                gc->DrawRectangle(x * cellLenX, y * cellLenY, cellLenX, cellLenY);
+                if(board->getCellAt(x, y)->hasPiece()) {
+                    gc->SetBrush(wxBrush(red));
+                    gc->DrawRectangle(x * cellLenX, y * cellLenY, cellLenX, cellLenY);
+                } else {
+                    gc->SetBrush(wxBrush(gray));
+                    gc->DrawEllipse(x * cellLenX + cellLenX / 3, y * cellLenY + cellLenY / 3, cellLenX / 3, cellLenY / 3);
+                }
             }
         }
     }

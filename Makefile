@@ -8,7 +8,7 @@ OBJDIR = ./objectfiles
 OUTDIR = ./compiled
 
 # include directories
-INCLUDE = -I./headers -I/mingw64/include
+INCLUDE = -I/mingw64/include
 WXINCLUDE = `wx-config-3.1 --cxxflags --static`
 
 # compiler flags
@@ -17,8 +17,7 @@ CXXFLAGS = -Wall -Wextra -fdiagnostics-color=always
 WINDRESFLAGS = --include-dir /mingw64/include --define __WIN32__ --define __GNUWIN32__
 
 # linker flags
-LDFLAGS = -L/mingw64/lib -static
-WXLDFLAGS = `wx-config-3.1 --libs all --static` -llzma -ldeflate -lzstd -lLerc -lwebp -static
+WXLDFLAGS = `wx-config-3.1 --libs all --static` -llzma -ldeflate -lzstd -lLerc -lwebp -lsharpyuv -static
 
 .PHONY: all clean
 
